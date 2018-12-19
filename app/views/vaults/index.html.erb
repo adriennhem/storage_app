@@ -1,0 +1,9 @@
+<h1>Vaults#index</h1>
+<p>Find me in app/views/vaults/index.html.erb</p>
+
+
+<%= link_to 'Add New Vault', new_vault_path %>
+
+<% @vaults.each do |vault| %>
+	<%= link_to vault.title, vault %>
+<% end %>
