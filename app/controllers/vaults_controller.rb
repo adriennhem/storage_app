@@ -30,6 +30,6 @@ class VaultsController < ApplicationController
   end
 
   def vault_params
-    params.require(:vault).permit(:title)
+    params.require(:vault).permit(:title, :description)
   end
 end

@@ -1,9 +1,22 @@
-<h1>Vaults#index</h1>
-<p>Find me in app/views/vaults/index.html.erb</p>
+<div class="row">
+	<div class="col-md-9">
+		<h1>My Vaults</h1>
+	</div>
+	<div class="col-md-3">
+		<%= link_to 'Add New Vault', new_vault_path, class: "pull-right btn btn-primary" %>
+	</div>
+		<% @vaults.each do |vault| %>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<%= link_to vault.title, vault %>
+				</div>
+				<div class="panel-body">
+					<%= vault.description %>	
+				</div>
+			</div>
+		</div>
+		<% end %>
 
+</div>
 
-<%= link_to 'Add New Vault', new_vault_path %>
-
-<% @vaults.each do |vault| %>
-	<%= link_to vault.title, vault %>
-<% end %>
